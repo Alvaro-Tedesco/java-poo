@@ -1,20 +1,26 @@
 package org.example;
 
 public class Produto {
+    //    private int id;
+    private String name;
+    private Double unitPrice;
+    private int stock;
 
-    private String nome;
-    private Double precoUnitario;
-
-    public Produto(String _nome, Double _precoUnitario) {
-        this.nome = _nome;
-        this.precoUnitario = _precoUnitario;
+    public Produto(String name, int stock /*, Double unitPrice */) {
+        this.name = name;
+        this.stock = stock;
+//        this.unitPrice = unitPrice;
     }
 
-    public String getNome() {
-        return nome;
+    public int getStock() {
+        return stock;
     }
 
-    public Double getPrecoUnitario() {
-        return precoUnitario;
+    public void removeStock(int quantity) {
+        if (this.stock > quantity) this.stock -= quantity;
+    }
+
+    public void addStock(int quantity) {
+        this.stock += quantity;
     }
 }
