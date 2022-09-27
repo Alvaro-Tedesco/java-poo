@@ -1,27 +1,35 @@
-
 package org.example;
 
+import java.util.Random;
+
 public class Produto {
-    //    private int id;
+    private int id;
     private String name;
     private Double unitPrice;
     private int stock;
 
     public Produto(String name, int stock /*, Double unitPrice */) {
+        this.id = new Random().nextInt();
         this.name = name;
         this.stock = stock;
 //        this.unitPrice = unitPrice;
     }
 
+    public void addStock(int quantidade) {
+        this.stock += quantidade;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
     public int getStock() {
-        return stock;
+        return this.stock;
     }
 
-    public void removeStock(int quantity) {
-        if (this.stock > quantity) this.stock -= quantity;
-    }
-
-    public void addStock(int quantity) {
-        this.stock += quantity;
+    public void removeStock(int quantidade) {
+        if (this.stock > quantidade) {
+            this.stock -= quantidade;
+        }
     }
 }

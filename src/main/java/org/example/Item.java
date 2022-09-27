@@ -2,11 +2,22 @@ package org.example;
 
 public class Item {
     private int quantity;
-    private Produto produto;
+    private Produto product;
 
-    public Item(int quantity, Produto produto) {
-        this.quantity = quantity;
-        this.produto = produto;
+    public Item(Produto produto, int quantidade) {
+        this.product = produto;
+        this.quantity = quantidade;
     }
 
+    public int getQuantity() {
+        return this.quantity;
+    }
+
+    public String getNameProduto() {
+        return this.product.getName();
+    }
+
+    public Produto getProduto() {
+        return this.product;
+    }
 }
