@@ -1,15 +1,13 @@
 package org.example;
 
 public class PedidoVenda extends Pedido {
-    public PedidoVenda(Item item) {
-        super(item);
+    public PedidoVenda() {
+        super();
     }
 
     public void faturar() {
 
+        this.atualizaStock(false);
     }
 
-    public void addItem(Item item) {
-
-    }
 }

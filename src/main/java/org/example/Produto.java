@@ -14,14 +14,23 @@ public class Produto {
     }
 
     public int getStock() {
-        return stock;
+        return this.stock;
     }
 
     public void removeStock(int quantity) {
-        if (this.stock > quantity) this.stock -= quantity;
+        if (this.stock >= quantity) this.stock -= quantity;
     }
 
-    public void addStock(int quantity) {
+    public void setStock(int quantity) {
         this.stock += quantity;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    @Override
+    public String toString() {
+        return this.name + " = " + this.stock;
     }
 }
