@@ -9,26 +9,38 @@ public class Pedido {
         this.items = new ArrayList<>();
     }
 
-    public void setItem(Produto produto, int quantidade) {
-        Item item = new Item(produto, quantidade);
+    public void setItem(Produto produto, int quantity) {
+        for (Item item : this.items) {
+            if (produto.getName() == item.getProduto().getName()) {
+                item.setQuantity(item.getQuantity() + quantity);
+                return;
+            }
+        }
+
+        Item item = new Item(quantity, produto);
         this.items.add(item);
     }
 
     public void getItems() {
         for (Item item : this.items) {
-            System.out.println(item.getNameProduto() + " " + item.getQuantidade());
+            System.out.println(item.toString());
         }
-//        return this.items;
     }
 
-    public void atualizaEstoque(boolean compra) {
+    public ArrayList<Item> getIt() {
+        return this.items;
+    }
+
+
+    public void updateStock(boolean compra) {
         for (Item item : this.items) {
-            Produto produto = item.getProduto();
+            Produto produto = item.getProduct();
             if (compra) {
-                produto.addStock(item.getQuantidade());
-            } else {
-                produto.removeStock(item.getQuantidade());
+                produto.setStock(item.getQuantity());
+                return;
             }
+
+            produto.removeStock(item.getQuantity());
         }
     }
 }

@@ -20,4 +20,13 @@ public class Item {
     public Produto getProduto() {
         return this.product;
     }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    @Override
+    public String toString() {
+        return "produto: " + this.product.getName() + " quantidade: " + this.quantity;
+    }
 }

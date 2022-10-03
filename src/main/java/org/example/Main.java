@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main (String[] args) {
 
@@ -15,6 +17,20 @@ public class Main {
         System.out.println("Sprite " + sprite.getStock());
         System.out.println("Drumstick " + drumstick.getStock());
 
+        Produto sp = new Produto("sprite", 2);
+        Produto cc = new Produto("cocaCola", 5);
+
+        PedidoCompra p = new PedidoCompra();
+        p.setItem(sp, 2);
+        p.setItem(sp, 2);
+        p.setItem(cc, 5);
+        p.getItems();
+
+        ArrayList<Item> item = p.getIt();
+        item.add(new Item(5, sp));
+
+        p.processar();
+
         PedidoVenda pv = new PedidoVenda();
         pv.setItem(sprite, 2);
         pv.setItem(drumstick, 5);
@@ -23,5 +39,9 @@ public class Main {
         // ESPERA-SE QUE TENHA 23 SPRITES E 40 DRUMSTICKS
         System.out.println("Sprite " + sprite.getStock());
         System.out.println("Drumstick " + drumstick.getStock());
+        System.out.println(sp.toString());
+        System.out.println(cc.toString());
+
+
     }
 }

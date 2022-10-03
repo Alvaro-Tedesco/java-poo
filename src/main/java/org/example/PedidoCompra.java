@@ -6,6 +6,6 @@ public class PedidoCompra extends Pedido {
     }
 
     public void processar() {
-        this.atualizaEstoque(true);
+        this.updateStock(true);
     }
 }

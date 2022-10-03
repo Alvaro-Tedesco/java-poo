@@ -15,10 +15,6 @@ public class Produto {
 //        this.unitPrice = unitPrice;
     }
 
-    public void addStock(int quantidade) {
-        this.stock += quantidade;
-    }
-
     public String getName() {
         return this.name;
     }
@@ -27,9 +23,16 @@ public class Produto {
         return this.stock;
     }
 
-    public void removeStock(int quantidade) {
-        if (this.stock > quantidade) {
-            this.stock -= quantidade;
-        }
+    public void removeStock(int quantity) {
+        if (this.stock >= quantity) this.stock -= quantity;
+    }
+
+    public void setStock(int quantity) {
+        this.stock += quantity;
+    }
+
+    @Override
+    public String toString() {
+        return this.name + " = " + this.stock;
     }
 }

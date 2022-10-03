@@ -6,6 +6,6 @@ public class PedidoVenda extends Pedido {
     }
 
     public void faturar() {
-        this.atualizaEstoque(false);
+        this.updateStock(false);
     }
 }
