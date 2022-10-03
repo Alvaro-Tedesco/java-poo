@@ -11,13 +11,13 @@ public class Pedido {
 
     public void setItem(Produto produto, int quantity) {
         for (Item item : this.items) {
-            if (produto.getName() == item.getProduto().getName()) {
+            if (produto.getName() == item.getProduct().getName()) {
                 item.setQuantity(item.getQuantity() + quantity);
                 return;
             }
         }
 
-        Item item = new Item(quantity, produto);
+        Item item = new Item(produto, quantity);
         this.items.add(item);
     }
 

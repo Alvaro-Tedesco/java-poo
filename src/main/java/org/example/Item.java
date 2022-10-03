@@ -17,7 +17,7 @@ public class Item {
         return this.product.getName();
     }
 
-    public Produto getProduto() {
+    public Produto getProduct() {
         return this.product;
     }
 
