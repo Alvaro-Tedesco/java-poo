@@ -27,6 +27,6 @@ public class Item {
 
     @Override
     public String toString() {
-        return "produto: " + this.product.getName() + " quantidade: " + this.quantity;
+        return "Produto: " + this.product.getName() + " quantidade: " + this.quantity;
     }
 }

@@ -4,8 +4,10 @@ import java.util.ArrayList;
 
 public class Pedido {
     private final ArrayList<Item> items;
+    private final Pessoa pessoa;
 
-    public Pedido() {
+    public Pedido(Pessoa pessoa) {
+        this.pessoa = pessoa;
         this.items = new ArrayList<>();
     }
 
@@ -31,16 +33,24 @@ public class Pedido {
         return this.items;
     }
 
-
     public void updateStock(boolean compra) {
         for (Item item : this.items) {
             Produto produto = item.getProduct();
             if (compra) {
                 produto.setStock(item.getQuantity());
-                return;
+                continue;
             }
 
             produto.removeStock(item.getQuantity());
+        }
+    }
+
+    public void updateBalance() {
+        for (Item item : this.items) {
+            double price = item.getProduct().getUnitPrice();
+            int qtd = item.getQuantity();
+
+            this.pessoa.setBalance(price * qtd);
         }
     }
 }
