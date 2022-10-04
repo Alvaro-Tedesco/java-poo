@@ -2,7 +2,7 @@ package org.example;
 
 public class Item {
     private int quantity;
-    private Produto product;
+    private final Produto product;
 
     public Item(Produto produto, int quantidade) {
         this.product = produto;

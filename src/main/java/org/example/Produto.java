@@ -3,20 +3,28 @@ package org.example;
 import java.util.Random;
 
 public class Produto {
-    private int id;
-    private String name;
-    private Double unitPrice;
+    private final int id;
+    private final String name;
+    private final Double unitPrice;
     private int stock;
 
-    public Produto(String name, int stock /*, Double unitPrice */) {
+    public Produto(String name, int stock , Double unitPrice) {
         this.id = new Random().nextInt();
         this.name = name;
         this.stock = stock;
-//        this.unitPrice = unitPrice;
+        this.unitPrice = unitPrice;
     }
 
     public String getName() {
         return this.name;
+    }
+
+    public Double getUnitPrice() {
+        return unitPrice;
+    }
+
+    public void setStock(int quantity) {
+        this.stock += quantity;
     }
 
     public int getStock() {
@@ -25,10 +33,6 @@ public class Produto {
 
     public void removeStock(int quantity) {
         if (this.stock >= quantity) this.stock -= quantity;
-    }
-
-    public void setStock(int quantity) {
-        this.stock += quantity;
     }
 
     @Override

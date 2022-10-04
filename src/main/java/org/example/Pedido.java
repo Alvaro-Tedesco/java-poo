@@ -4,9 +4,11 @@ import java.util.ArrayList;
 
 public class Pedido {
     private final ArrayList<Item> items;
+    private final Pessoa pessoa;
 
-    public Pedido() {
+    public Pedido(Pessoa pessoa) {
         this.items = new ArrayList<>();
+        this.pessoa = pessoa;
     }
 
     public void setItem(Produto produto, int quantity) {
@@ -37,10 +39,19 @@ public class Pedido {
             Produto produto = item.getProduct();
             if (compra) {
                 produto.setStock(item.getQuantity());
-                return;
+                continue;
             }
 
             produto.removeStock(item.getQuantity());
+        }
+    }
+
+    public void updateBalance() {
+        for (Item item : this.items) {
+            double price = item.getProduct().getUnitPrice();
+            double qtd = item.getQuantity();
+
+            this.pessoa.setBalance(price * qtd);
         }
     }
 }
