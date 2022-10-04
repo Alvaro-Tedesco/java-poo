@@ -23,7 +23,7 @@ public class Main {
 
         PedidoVenda pv = new PedidoVenda(jose);
         pv.setItem(sprite, 2);
-        pv.setItem(drumstick, 5);
+        pv.setItem(drumstick, 25);
         pv.faturar();
 
         // ESPERA-SE QUE TENHA 23 SPRITES E 40 DRUMSTICKS

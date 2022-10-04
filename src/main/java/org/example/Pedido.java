@@ -33,7 +33,6 @@ public class Pedido {
         return this.items;
     }
 
-
     public void updateStock(boolean compra) {
         for (Item item : this.items) {
             Produto produto = item.getProduct();
@@ -49,7 +48,7 @@ public class Pedido {
     public void updateBalance() {
         for (Item item : this.items) {
             double price = item.getProduct().getUnitPrice();
-            double qtd = item.getQuantity();
+            int qtd = item.getQuantity();
 
             this.pessoa.setBalance(price * qtd);
         }

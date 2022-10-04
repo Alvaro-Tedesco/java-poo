@@ -15,7 +15,7 @@ public class Pessoa {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public double getBalance() {

@@ -8,7 +8,7 @@ public class Produto {
     private final Double unitPrice;
     private int stock;
 
-    public Produto(String name, int stock , Double unitPrice) {
+    public Produto(String name, int stock, Double unitPrice) {
         this.id = new Random().nextInt();
         this.name = name;
         this.stock = stock;
@@ -20,7 +20,7 @@ public class Produto {
     }
 
     public Double getUnitPrice() {
-        return unitPrice;
+        return this.unitPrice;
     }
 
     public void setStock(int quantity) {
